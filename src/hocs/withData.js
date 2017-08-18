@@ -1,5 +1,5 @@
 import React from "react";
-import { compose, branch, mapProps, withProps } from "recompose";
+import { compose, branch, mapProps } from "recompose";
 
 const setLoading = prevState => ({
   ...prevState,

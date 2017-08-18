@@ -14,25 +14,22 @@ const enhance = compose(
   })
 );
 
-const Cakes = ({ cakes, search }) => {
-  let regex = new RegExp(search, "gi");
-  return (
-    <div>
-      {cakes.loading && "Loading..."}
-      {cakes.data && cakes.data.length ? (
-        cakes.data.map(cake => (
-          <Cake
-            key={cake.id}
-            cake={cake}
-            search={search}
-            unboundRemove={cakes.remove}
-          />
-        ))
-      ) : (
-        <div>No results</div>
-      )}
-    </div>
-  );
-};
+const Cakes = ({ cakes, search }) => (
+  <div>
+    {cakes.loading && "Loading..."}
+    {cakes.data && cakes.data.length ? (
+      cakes.data.map(cake => (
+        <Cake
+          key={cake.id}
+          cake={cake}
+          search={search}
+          unboundRemove={cakes.remove}
+        />
+      ))
+    ) : (
+      <div>No results</div>
+    )}
+  </div>
+);
 
 export default enhance(Cakes);

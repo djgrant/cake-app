@@ -16,7 +16,11 @@ const enhance = compose(
 const App = ({ search, handleSearch }) => (
   <div>
     <div className="header">
-      <h1>🎂</h1>
+      <h1>
+        <span role="img" aria-label="cake">
+          🎂
+        </span>
+      </h1>
       <h2>Cake App</h2>
       <div className="card">
         <input type="search" placeholder="Search..." onChange={handleSearch} />
