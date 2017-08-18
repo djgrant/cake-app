@@ -3,27 +3,44 @@ import { Link } from "react-router-dom";
 import { compose, withState, withHandlers } from "recompose";
 import "./Form.css";
 
+const defaultValues = {
+  title: "",
+  desc: "",
+  image:
+    "http://icons.iconarchive.com/icons/flat-icons.com/flat/256/Cake-icon.png"
+};
+
 const enhance = compose(
-  withState("title", "setTitle", ""),
-  withState("description", "setDescription", ""),
+  withState("values", "setValues", props => props.values || defaultValues),
   withHandlers({
     handleTitleChange: props => e => {
-      props.setTitle(e.target.value);
+      props.setValues({
+        ...props.values,
+        title: e.target.value
+      });
     },
-    handleDescriptionChange: props => e => {
-      props.setDescription(e.target.value);
+    handleDescChange: props => e => {
+      props.setValues({
+        ...props.values,
+        desc: e.target.value
+      });
     },
     handleSubmit: props => e => {
       e.preventDefault();
-      if (!props.title.length || !props.description.length) {
+      if (!props.values.title.length || !props.values.desc.length) {
         return;
       }
-      props.onSubmit(props);
+      props.onSubmit(props.values);
     }
   })
 );
 
-const Form = ({ handleTitleChange, handleDescriptionChange, handleSubmit }) => (
+const Form = ({
+  values: { title, desc },
+  handleTitleChange,
+  handleDescChange,
+  handleSubmit
+}) => (
   <form className="Form" onSubmit={handleSubmit}>
     <div className="Form-header expanded">
       <Link to="/" className="floated-left text-big">
@@ -38,6 +55,7 @@ const Form = ({ handleTitleChange, handleDescriptionChange, handleSubmit }) => (
       <input
         type="text"
         required
+        value={title}
         placeholder="Title"
         onChange={handleTitleChange}
       />
@@ -47,8 +65,9 @@ const Form = ({ handleTitleChange, handleDescriptionChange, handleSubmit }) => (
       <input
         type="text"
         required
+        value={desc}
         placeholder="Description"
-        onChange={handleDescriptionChange}
+        onChange={handleDescChange}
       />
     </div>
   </form>

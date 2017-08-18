@@ -1,4 +1,3 @@
-import React from "react";
 import { withRouter } from "react-router-dom";
 import { compose, withProps } from "recompose";
 import withData from "../hocs/withData";
@@ -8,19 +7,12 @@ import Form from "./Form";
 const enhance = compose(
   withRouter,
   withData(cakeResolver),
-  withProps({
-    onSubmit: props => {
-      props.cakes.add({
-        data: {
-          title: props.title,
-          desc: props.description,
-          image:
-            "http://icons.iconarchive.com/icons/flat-icons.com/flat/256/Cake-icon.png"
-        }
-      });
+  withProps(props => ({
+    onSubmit: values => {
+      props.cakes.add({ data: values });
       props.history.replace("/");
     }
-  })
+  }))
 );
 
 export default enhance(Form);

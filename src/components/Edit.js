@@ -1,6 +1,3 @@
-// WIP
-
-import React from "react";
 import { withRouter } from "react-router-dom";
 import { compose, withProps } from "recompose";
 import withData from "../hocs/withData";
@@ -11,15 +8,13 @@ const enhance = compose(
   withRouter,
   withData(cakeResolver),
   withProps(props => ({
-    onSubmit: data => {
+    values: props.cakes.data
+      ? props.cakes.data.find(cake => cake.id === props.match.params.id)
+      : {},
+    onSubmit: values => {
       props.cakes.edit({
         id: props.match.params.id,
-        data: {
-          title: data.title,
-          desc: data.description,
-          image:
-            "http://icons.iconarchive.com/icons/flat-icons.com/flat/256/Cake-icon.png"
-        }
+        data: values
       });
       props.history.replace("/");
     }

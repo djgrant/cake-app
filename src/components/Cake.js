@@ -24,7 +24,7 @@ const Cake = ({ search, cake, handleRemove }) => (
         </Highlighted>
       </p>
       <small>
-        {/* <Link to={`/edit/${cake.id}`}>Edit</Link> */}
+        <Link to={`/edit/${cake.id}`}>Edit</Link>&nbsp;
         <button className="button-link" onClick={handleRemove}>
           Remove
         </button>

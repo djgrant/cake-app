@@ -29,7 +29,7 @@
 
 .expanded:before,
 .expanded:after {
-  content: " "; 
+  content: " ";
   display: table;
 }
 
@@ -42,6 +42,7 @@
 }
 
 .button-link {
+  display: inline-block;
   border: none;
   background: none;
   font-size: 100%;
