@@ -1,0 +1,12 @@
+.cake {
+  margin-bottom: 10px;
+  padding: 20px;
+}
+
+.cake img {
+  max-width: 100px;
+}
+
+.cake .hl {
+  background: #FFD399;
+}

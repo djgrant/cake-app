@@ -1,0 +1,52 @@
+.padded {
+  padding: 20px;
+}
+
+.padded-small {
+  padding: 10px;
+}
+
+.media {
+  display: flex;
+  align-items: flex-start;
+}
+
+.media-figure {
+  margin-right: 1em;
+}
+
+.media-body {
+  flex: 1;
+}
+
+.floated-left {
+  float: left;
+}
+
+.floated-right {
+  float: right;
+}
+
+.expanded:before,
+.expanded:after {
+  content: " "; 
+  display: table;
+}
+
+.expanded:after {
+  clear: both;
+}
+
+.text-big {
+  font-size: 20px;
+}
+
+.button-link {
+  border: none;
+  background: none;
+  font-size: 100%;
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+  padding: 0;
+}
