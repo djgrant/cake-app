@@ -16,19 +16,22 @@ const enhance = compose(
 
 const Cakes = ({ cakes, search }) => (
   <div>
-    {cakes.loading && "Loading..."}
-    {cakes.data && cakes.data.length ? (
-      cakes.data.map(cake => (
-        <Cake
-          key={cake.id}
-          cake={cake}
-          search={search}
-          unboundRemove={cakes.remove}
-        />
-      ))
-    ) : (
-      <div>No results</div>
+    {cakes.loading && (
+      <div className="padded-top aligned-center">Loading...</div>
     )}
+    {cakes.data &&
+      (cakes.data.length ? (
+        cakes.data.map(cake => (
+          <Cake
+            key={cake.id}
+            cake={cake}
+            search={search}
+            unboundRemove={cakes.remove}
+          />
+        ))
+      ) : (
+        <div className="padded-top aligned-center">No results</div>
+      ))}
   </div>
 );
 

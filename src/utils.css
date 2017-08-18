@@ -2,8 +2,15 @@
   padding: 20px;
 }
 
+.padded-top {
+  padding-top: 20px;
+}
+
 .padded-small {
   padding: 10px;
+}
+.aligned-center {
+  text-align: center;
 }
 
 .media {
