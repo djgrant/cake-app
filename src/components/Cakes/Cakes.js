@@ -1,8 +1,8 @@
 import React from "react";
 import { compose } from "recompose";
-import withData from "../hocs/withData";
-import Cake from "./Cake";
-import cakeResolver from "../resolvers/cakeResolver";
+import withData from "../../hocs/withData";
+import Cake from "../Cake";
+import cakeResolver from "../../resolvers/cakeResolver";
 
 const enhance = compose(
   withData(cakeResolver, {

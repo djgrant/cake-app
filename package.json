@@ -1,8 +1,9 @@
 {
   "name": "cake-app",
-  "description": null,
+  "description": "Technical test",
   "version": "0.0.267",
   "dependencies": {
+    "npm": "^5.8.0",
     "react": "15.5.3",
     "react-dom": "15.5.3",
     "react-router-dom": "4.1.2",

@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { withProps } from "recompose";
-import Card from "./Card";
-import Highlighted from "./Highlighted";
+import Card from "../Card";
+import Highlighted from "../Highlighted";
 import "./Cake.css";
 
 const enhance = withProps(props => ({

@@ -1,8 +1,7 @@
 import React from "react";
 import { compose, withHandlers, withState } from "recompose";
-import Cakes from "./Cakes";
-import Create from "./Create";
-import "./App.css";
+import Cakes from "../components/Cakes";
+import Create from "../components/Create";
 
 const enhance = compose(
   withState("search", "setSearch"),

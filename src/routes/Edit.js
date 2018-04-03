@@ -2,7 +2,7 @@ import { withRouter } from "react-router-dom";
 import { compose, withProps } from "recompose";
 import withData from "../hocs/withData";
 import cakeResolver from "../resolvers/cakeResolver";
-import Form from "./Form";
+import Form from "../components/Form";
 
 const enhance = compose(
   withRouter,
